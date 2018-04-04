@@ -1,0 +1,90 @@
+<templateSet group="Demyst-schema">
+  <template name="l!" value="{&#10;  &quot;name&quot;: &quot;$NAME$&quot;,&#10;  &quot;type&quot;: &quot;List&quot;,&#10;  &quot;description&quot;: &quot;$DESCRIPTION$&quot;,&#10;  &quot;children&quot;: [&#10;    $END$&#10;  ]&#10;}," description="List without description" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="snakeCase(clipboard())" defaultValue="" alwaysStopAt="false" />
+    <variable name="DESCRIPTION" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JSON" value="true" />
+    </context>
+  </template>
+  <template name="f" value="{ &quot;type&quot;: &quot;$TYPE$&quot;, &quot;description&quot;: &quot;$DESCRIPTION$&quot; },&#10;" description="Field" toReformat="false" toShortenFQNames="true">
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="DESCRIPTION" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JSON" value="true" />
+    </context>
+  </template>
+  <template name="d!" value="{&#10;  &quot;name&quot;: &quot;$NAME$&quot;,&#10;  &quot;type&quot;: &quot;Dictionary&quot;,&#10;  &quot;description&quot;: &quot;$DESCRIPTION$&quot;,&#10;  &quot;children&quot;: [&#10;    $END$&#10;  ]&#10;}," description="Dictionary without description" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="snakeCase(clipboard())" defaultValue="" alwaysStopAt="false" />
+    <variable name="DESCRIPTION" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JSON" value="true" />
+    </context>
+  </template>
+  <template name="f!" value="{ &quot;type&quot;: &quot;$TYPE$&quot; },&#10;" description="Field without description" toReformat="false" toShortenFQNames="true">
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JSON" value="true" />
+    </context>
+  </template>
+  <template name="dt" value="{ &quot;name&quot;: &quot;$NAME$&quot;, &quot;type&quot;: &quot;$TYPE$&quot;, &quot;description&quot;: &quot;$DESCRIPTION$&quot; }," description="Field:DateTime" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="snakeCase(clipboard())" defaultValue="" alwaysStopAt="false" />
+    <variable name="TYPE" expression="" defaultValue="&quot;DateTime&quot;" alwaysStopAt="false" />
+    <variable name="DESCRIPTION" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JSON" value="true" />
+    </context>
+  </template>
+  <template name="y" value="{ &quot;name&quot;: &quot;$NAME$&quot;, &quot;type&quot;: &quot;$TYPE$&quot;, &quot;description&quot;: &quot;$DESCRIPTION$&quot; }," description="Field:Year" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="snakeCase(clipboard())" defaultValue="" alwaysStopAt="false" />
+    <variable name="TYPE" expression="" defaultValue="&quot;Year&quot;" alwaysStopAt="false" />
+    <variable name="DESCRIPTION" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JSON" value="true" />
+    </context>
+  </template>
+  <template name="d" value="{&#10;  &quot;name&quot;: &quot;$NAME$&quot;,&#10;  &quot;type&quot;: &quot;Dictionary&quot;,&#10;  &quot;description&quot;: &quot;$DESCRIPTION$&quot;,&#10;  &quot;children&quot;: [&#10;    $END$&#10;  ]&#10;}," description="Dictionary" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="snakeCase(clipboard())" defaultValue="" alwaysStopAt="false" />
+    <variable name="DESCRIPTION" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JSON" value="true" />
+    </context>
+  </template>
+  <template name="fn" value="{ &quot;name&quot;: &quot;$NAME$&quot;, &quot;type&quot;: &quot;$TYPE$&quot;, &quot;description&quot;: &quot;$DESCRIPTION$&quot; }," description="Field with name" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="snakeCase(clipboard())" defaultValue="" alwaysStopAt="false" />
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="false" />
+    <variable name="DESCRIPTION" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JSON" value="true" />
+    </context>
+  </template>
+  <template name="fn!" value="{ &quot;name&quot;: &quot;$NAME$&quot;, &quot;type&quot;: &quot;$TYPE$&quot; }," description="Field with name without description" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="snakeCase(clipboard())" defaultValue="" alwaysStopAt="false" />
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JSON" value="true" />
+    </context>
+  </template>
+  <template name="n" value="{ &quot;name&quot;: &quot;$NAME$&quot;, &quot;type&quot;: &quot;$TYPE$&quot;, &quot;description&quot;: &quot;$DESCRIPTION$&quot; }," description="Field:Number" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="snakeCase(clipboard())" defaultValue="" alwaysStopAt="false" />
+    <variable name="TYPE" expression="" defaultValue="&quot;Number&quot;" alwaysStopAt="false" />
+    <variable name="DESCRIPTION" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JSON" value="true" />
+    </context>
+  </template>
+  <template name="s" value="{ &quot;name&quot;: &quot;$NAME$&quot;, &quot;type&quot;: &quot;$TYPE$&quot;, &quot;description&quot;: &quot;$DESCRIPTION$&quot; }," description="Field:String" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="snakeCase(clipboard())" defaultValue="" alwaysStopAt="false" />
+    <variable name="TYPE" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="false" />
+    <variable name="DESCRIPTION" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JSON" value="true" />
+    </context>
+  </template>
+  <template name="l" value="{&#10;  &quot;name&quot;: &quot;$NAME$&quot;,&#10;  &quot;type&quot;: &quot;List&quot;,&#10;  &quot;description&quot;: &quot;$DESCRIPTION$&quot;,&#10;  &quot;children&quot;: [&#10;    $END$&#10;  ]&#10;}," description="List" toReformat="true" toShortenFQNames="true">
+    <variable name="NAME" expression="snakeCase(clipboard())" defaultValue="" alwaysStopAt="false" />
+    <variable name="DESCRIPTION" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JSON" value="true" />
+    </context>
+  </template>
+</templateSet>

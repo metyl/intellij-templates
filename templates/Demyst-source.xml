@@ -1,0 +1,56 @@
+<templateSet group="Demyst-source">
+  <template name="d" value="&quot;$KEY$&quot; -&gt; json.at(&quot;$PATH$&quot;).dictionary(json =&gt; D.Dictionary(&#10;    $END$&#10;)),&#10;" description="Output kv:D.Dictionary" toReformat="true" toShortenFQNames="true">
+    <variable name="KEY" expression="snakeCase(clipboard())" defaultValue="" alwaysStopAt="false" />
+    <variable name="PATH" expression="clipboard()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="SCALA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="f" value="&quot;$KEY$&quot; -&gt; json.at(&quot;$PATH$&quot;).as[D.$TYPE$],&#10;" description="Output kv:D.TYPE" toReformat="true" toShortenFQNames="true">
+    <variable name="KEY" expression="snakeCase(clipboard())" defaultValue="" alwaysStopAt="false" />
+    <variable name="PATH" expression="clipboard()" defaultValue="" alwaysStopAt="false" />
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="SCALA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="y" value="&quot;$KEY$&quot; -&gt; json.at(&quot;$PATH$&quot;).as[D.$TYPE$],&#10;" description="Output kv:Year" toReformat="true" toShortenFQNames="true">
+    <variable name="KEY" expression="snakeCase(clipboard())" defaultValue="" alwaysStopAt="false" />
+    <variable name="PATH" expression="clipboard()" defaultValue="" alwaysStopAt="false" />
+    <variable name="TYPE" expression="" defaultValue="&quot;Year&quot;" alwaysStopAt="false" />
+    <context>
+      <option name="SCALA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="dt" value="&quot;$KEY$&quot; -&gt; json.at(&quot;$PATH$&quot;).as[D.$TYPE$],&#10;" description="Output kv:D.DateTime" toReformat="true" toShortenFQNames="true">
+    <variable name="KEY" expression="snakeCase(clipboard())" defaultValue="" alwaysStopAt="false" />
+    <variable name="PATH" expression="clipboard()" defaultValue="" alwaysStopAt="false" />
+    <variable name="TYPE" expression="" defaultValue="&quot;DateTime&quot;" alwaysStopAt="false" />
+    <context>
+      <option name="SCALA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="s" value="&quot;$KEY$&quot; -&gt; json.at(&quot;$PATH$&quot;).as[D.$TYPE$],&#10;" description="Output kv:String" toReformat="true" toShortenFQNames="true">
+    <variable name="KEY" expression="snakeCase(clipboard()" defaultValue="" alwaysStopAt="false" />
+    <variable name="PATH" expression="clipboard()" defaultValue="" alwaysStopAt="false" />
+    <variable name="TYPE" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="false" />
+    <context>
+      <option name="SCALA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="n" value="&quot;$KEY$&quot; -&gt; json.at(&quot;$PATH$&quot;).as[D.$TYPE$],&#10;" description="Output kv:Number" toReformat="true" toShortenFQNames="true">
+    <variable name="KEY" expression="snakeCase(clipboard()" defaultValue="" alwaysStopAt="false" />
+    <variable name="PATH" expression="clipboard()" defaultValue="" alwaysStopAt="false" />
+    <variable name="TYPE" expression="" defaultValue="&quot;Number&quot;" alwaysStopAt="false" />
+    <context>
+      <option name="SCALA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="l" value="&quot;$KEY$&quot; -&gt; json.at(&quot;$PATH$&quot;).list(json =&gt; D.Dictionary(&#10;    $END$&#10;)),&#10;" description="Output kv:D.List" toReformat="true" toShortenFQNames="true">
+    <variable name="KEY" expression="snakeCase(clipboard())" defaultValue="" alwaysStopAt="false" />
+    <variable name="PATH" expression="clipboard()" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="SCALA_CODE" value="true" />
+    </context>
+  </template>
+</templateSet>
