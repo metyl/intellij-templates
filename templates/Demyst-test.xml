@@ -1,7 +1,7 @@
 <templateSet group="Demyst-test">
-  <template name="adt" value="&quot;$KEY$&quot; -&gt; D.DateTime($VALUES$),&#10;" description="Assert kv:DateTime" toReformat="true" toShortenFQNames="true">
+  <template name="adt" value="&quot;$KEY$&quot; -&gt; D.DateTime($VALUE$),&#10;" description="Assert kv:D.DateTime" toReformat="true" toShortenFQNames="true">
     <variable name="KEY" expression="snakeCase(clipboard())" defaultValue="key" alwaysStopAt="false" />
-    <variable name="VALUES" expression="" defaultValue="value" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="SCALA_CODE" value="true" />
     </context>
@@ -17,23 +17,42 @@
       <option name="SCALA_CODE" value="true" />
     </context>
   </template>
-  <template name="ay" value="&quot;$KEY$&quot; -&gt; D.Year(&quot;$VALUES$&quot;),&#10;" description="Assert kv:D.String" toReformat="true" toShortenFQNames="true">
+  <template name="ay" value="&quot;$KEY$&quot; -&gt; D.Year(&quot;$VALUE$&quot;),&#10;" description="Assert kv:D.String" toReformat="true" toShortenFQNames="true">
     <variable name="KEY" expression="snakeCase(clipboard())" defaultValue="key" alwaysStopAt="false" />
-    <variable name="VALUES" expression="" defaultValue="value" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="SCALA_CODE" value="true" />
     </context>
   </template>
-  <template name="as" value="&quot;$KEY$&quot; -&gt; D.String(&quot;$VALUES$&quot;),&#10;" description="Assert kv:D.String" toReformat="true" toShortenFQNames="true">
+  <template name="as" value="&quot;$KEY$&quot; -&gt; D.String(&quot;$VALUE$&quot;),&#10;" description="Assert kv:D.String" toReformat="true" toShortenFQNames="true">
     <variable name="KEY" expression="snakeCase(clipboard())" defaultValue="key" alwaysStopAt="false" />
-    <variable name="VALUES" expression="" defaultValue="value" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="SCALA_CODE" value="true" />
     </context>
   </template>
-  <template name="an" value="&quot;$KEY$&quot; -&gt; D.Number($VALUES$),&#10;" description="assert kv:D.Number" toReformat="true" toShortenFQNames="true">
+  <template name="an" value="&quot;$KEY$&quot; -&gt; D.Number($VALUE$),&#10;" description="assert kv:D.Number" toReformat="true" toShortenFQNames="true">
     <variable name="KEY" expression="snakeCase(clipboard())" defaultValue="key" alwaysStopAt="false" />
-    <variable name="VALUES" expression="" defaultValue="value" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="SCALA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="al" value="output(&quot;$KEY$&quot;).expectList&#10;&#10;" description="Assert output D.List" toReformat="true" toShortenFQNames="true">
+    <variable name="KEY" expression="snakeCase(clipboard())" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="SCALA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="al1" value="output(&quot;$KEY$&quot;).expectList(0).assertContainsPresent(&#10;    $END$&#10;)&#10;&#10;" description="Assert output D.List first element contains fields" toReformat="true" toShortenFQNames="true">
+    <variable name="KEY" expression="snakeCase(clipboard())" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="SCALA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="aea" value="&quot;$KEY$&quot; -&gt; D.EmailAddress(&quot;$VALUE$&quot;),&#10;" description="Assert kv:D.EmailAddress" toReformat="true" toShortenFQNames="true">
+    <variable name="KEY" expression="snakeCase(clipboard())" defaultValue="key" alwaysStopAt="false" />
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="SCALA_CODE" value="true" />
     </context>
