@@ -184,4 +184,61 @@
       <option name="JSON" value="true" />
     </context>
   </template>
+  <template name="p" value="{ &quot;type&quot;: &quot;$TYPE$&quot;, &quot;description&quot;: &quot;$DESCRIPTION$&quot; }," description="Field:Phone" toReformat="false" toShortenFQNames="true">
+    <variable name="TYPE" expression="" defaultValue="&quot;Phone&quot;" alwaysStopAt="false" />
+    <variable name="DESCRIPTION" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JSON" value="true" />
+    </context>
+  </template>
+  <template name="b" value="{ &quot;name&quot;: &quot;$NAME$&quot;, &quot;type&quot;: &quot;$TYPE$&quot;, &quot;description&quot;: &quot;$DESCRIPTION$&quot; }," description="Field:Boolean" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="snakeCase(clipboard())" defaultValue="&quot;is_&quot;" alwaysStopAt="true" />
+    <variable name="TYPE" expression="" defaultValue="&quot;Boolean&quot;" alwaysStopAt="false" />
+    <variable name="DESCRIPTION" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JSON" value="true" />
+    </context>
+  </template>
+  <template name="sta" value="{ &quot;type&quot;: &quot;$TYPE$&quot;, &quot;description&quot;: &quot;$DESCRIPTION$&quot; }," description="Field:State" toReformat="false" toShortenFQNames="true">
+    <variable name="TYPE" expression="" defaultValue="&quot;State&quot;" alwaysStopAt="false" />
+    <variable name="DESCRIPTION" expression="" defaultValue="&quot;State&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="JSON" value="true" />
+    </context>
+  </template>
+  <template name="senum" value="{ &quot;name&quot;: &quot;$NAME$&quot;, &quot;type&quot;: &quot;$TYPE$&quot;, &quot;description&quot;: &quot;$DESCRIPTION$&quot;,   &#10;  &quot;enumeration&quot;: [&#10;    $END$&#10;  ]&#10;}," description="Field:String with enumeration" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="snakeCase(clipboard())" defaultValue="" alwaysStopAt="false" />
+    <variable name="TYPE" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="false" />
+    <variable name="DESCRIPTION" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JSON" value="true" />
+    </context>
+  </template>
+  <template name="enum" value="&quot;enumeration&quot;: [&#10;  $END$&#10;]&#10;" description="enumeration" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JSON" value="true" />
+    </context>
+  </template>
+  <template name="g" value="{ &quot;name&quot;: &quot;$NAME$&quot;, &quot;type&quot;: &quot;$TYPE$&quot;, &quot;description&quot;: &quot;$DESCRIPTION$&quot; }," description="Field:Gender" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="snakeCase(clipboard())" defaultValue="&quot;is_&quot;" alwaysStopAt="true" />
+    <variable name="TYPE" expression="" defaultValue="&quot;Gender&quot;" alwaysStopAt="false" />
+    <variable name="DESCRIPTION" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JSON" value="true" />
+    </context>
+  </template>
+  <template name="s!" value="{ &quot;name&quot;: &quot;$NAME$&quot;, &quot;type&quot;: &quot;$TYPE$&quot; }," description="Field:String without description" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="snakeCase(clipboard())" defaultValue="" alwaysStopAt="false" />
+    <variable name="TYPE" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="false" />
+    <context>
+      <option name="JSON" value="true" />
+    </context>
+  </template>
+  <template name="senum!" value="{ &quot;name&quot;: &quot;$NAME$&quot;, &quot;type&quot;: &quot;$TYPE$&quot;,   &#10;  &quot;enumeration&quot;: [&#10;    $END$&#10;  ]&#10;}," description="Field:String with enumeration without description" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="snakeCase(clipboard())" defaultValue="" alwaysStopAt="false" />
+    <variable name="TYPE" expression="" defaultValue="&quot;String&quot;" alwaysStopAt="false" />
+    <context>
+      <option name="JSON" value="true" />
+    </context>
+  </template>
 </templateSet>
