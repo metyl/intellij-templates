@@ -11,13 +11,14 @@
       <option name="SCALA_CODE" value="true" />
     </context>
   </template>
-  <template name="ad" value="output(&quot;$KEY$&quot;).expectDictionary.assertContainsPresent(&#10;    $END$&#10;)&#10;&#10;" description="Assert output D.Dictinary contains fields" toReformat="true" toShortenFQNames="true">
+  <template name="ad" value="$OUTPUT$(&quot;$KEY$&quot;).expectDictionary.assertContainsPresent(&#10;    $END$&#10;)&#10;&#10;" description="Assert output D.Dictinary contains fields" toReformat="true" toShortenFQNames="true">
+    <variable name="OUTPUT" expression="" defaultValue="&quot;output&quot;" alwaysStopAt="true" />
     <variable name="KEY" expression="snakeCase(clipboard())" defaultValue="" alwaysStopAt="false" />
     <context>
       <option name="SCALA_CODE" value="true" />
     </context>
   </template>
-  <template name="ay" value="&quot;$KEY$&quot; -&gt; D.Year(&quot;$VALUE$&quot;),&#10;" description="Assert kv:D.String" toReformat="true" toShortenFQNames="true">
+  <template name="ay" value="&quot;$KEY$&quot; -&gt; D.Year($VALUE$),&#10;" description="Assert kv:D.String" toReformat="true" toShortenFQNames="true">
     <variable name="KEY" expression="snakeCase(clipboard())" defaultValue="key" alwaysStopAt="false" />
     <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
@@ -38,13 +39,15 @@
       <option name="SCALA_CODE" value="true" />
     </context>
   </template>
-  <template name="al" value="output(&quot;$KEY$&quot;).expectList &#10;" description="Assert output D.List" toReformat="true" toShortenFQNames="true">
-    <variable name="KEY" expression="snakeCase(clipboard())" defaultValue="" alwaysStopAt="false" />
+  <template name="al" value="$OUTPUT$(&quot;$KEY$&quot;).expectList &#10;" description="Assert output D.List" toReformat="true" toShortenFQNames="true">
+    <variable name="OUTPUT" expression="" defaultValue="&quot;output&quot;" alwaysStopAt="true" />
+    <variable name="KEY" expression="concat(snakeCase(clipboard),&quot;s&quot;))" defaultValue="" alwaysStopAt="false" />
     <context>
       <option name="SCALA_CODE" value="true" />
     </context>
   </template>
-  <template name="al1" value="output(&quot;$KEY$&quot;).expectList(0).assertContainsPresent(&#10;    $END$&#10;)&#10;&#10;" description="Assert output D.List first element contains fields" toReformat="true" toShortenFQNames="true">
+  <template name="al1" value="$OUTPUT$(&quot;$KEY$&quot;).expectList(0).assertContainsPresent(&#10;    $END$&#10;)&#10;&#10;" description="Assert output D.List first element contains fields" toReformat="true" toShortenFQNames="true">
+    <variable name="OUTPUT" expression="" defaultValue="&quot;output&quot;" alwaysStopAt="true" />
     <variable name="KEY" expression="snakeCase(clipboard())" defaultValue="" alwaysStopAt="false" />
     <context>
       <option name="SCALA_CODE" value="true" />
@@ -79,17 +82,17 @@
       <option name="SCALA_CODE" value="true" />
     </context>
   </template>
-  <template name="aci" value="&quot;$KEY$&quot; -&gt; D.$TYPE$(&quot;$VALUE$&quot;),&#10;" description="Output kv:D.City" toReformat="true" toShortenFQNames="true">
+  <template name="aci" value="&quot;$KEY$&quot; -&gt; D.$TYPE$.validateString(&quot;$VALUE$&quot;),&#10;" description="Output kv:D.City" toReformat="true" toShortenFQNames="true">
     <variable name="TYPE" expression="" defaultValue="&quot;City&quot;" alwaysStopAt="false" />
     <variable name="KEY" expression="snakeCase(TYPE)" defaultValue="" alwaysStopAt="true" />
-    <variable name="VALUE" expression="clipboard()" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="clipboard()" defaultValue="" alwaysStopAt="false" />
     <context>
       <option name="SCALA_CODE" value="true" />
     </context>
   </template>
   <template name="ab" value="&quot;$KEY$&quot; -&gt; D.$TYPE$($VALUE$),&#10;" description="Output kv:D.Boolean" toReformat="true" toShortenFQNames="true">
     <variable name="TYPE" expression="" defaultValue="&quot;Boolean&quot;" alwaysStopAt="false" />
-    <variable name="KEY" expression="snakeCase(clipboard)" defaultValue="" alwaysStopAt="true" />
+    <variable name="KEY" expression="concat(&quot;is_&quot;, snakeCase(clipboard))" defaultValue="" alwaysStopAt="true" />
     <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="SCALA_CODE" value="true" />
@@ -119,7 +122,8 @@
       <option name="SCALA_CODE" value="true" />
     </context>
   </template>
-  <template name="als" value="assert(output(&quot;$KEY$&quot;).expectList.size == $SIZE$)&#10;&#10;" description="Assert output D.List size" toReformat="true" toShortenFQNames="true">
+  <template name="als" value="assert($OUTPUT$(&quot;$KEY$&quot;).expectList.size == $SIZE$)&#10;&#10;" description="Assert output D.List size" toReformat="true" toShortenFQNames="true">
+    <variable name="OUTPUT" expression="" defaultValue="&quot;output&quot;" alwaysStopAt="true" />
     <variable name="KEY" expression="snakeCase(clipboard())" defaultValue="" alwaysStopAt="false" />
     <variable name="SIZE" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
@@ -136,15 +140,15 @@
       <option name="SCALA_CODE" value="true" />
     </context>
   </template>
-  <template name="abn" value="&quot;$KEY$&quot; -&gt; D.$TYPE$(&quot;$VALUE$&quot;),&#10;" description="Output kv:D.BusinessName" toReformat="true" toShortenFQNames="true">
+  <template name="abn" value="&quot;$KEY$&quot; -&gt; D.$TYPE$.validateString(&quot;$VALUE$&quot;),&#10;" description="Output kv:D.BusinessName" toReformat="true" toShortenFQNames="true">
     <variable name="TYPE" expression="" defaultValue="&quot;BusinessName&quot;" alwaysStopAt="false" />
-    <variable name="KEY" expression="snakeCase(TYPE)" defaultValue="" alwaysStopAt="true" />
-    <variable name="VALUE" expression="capitalize(snakeCase(clipboard()))" defaultValue="" alwaysStopAt="true" />
+    <variable name="KEY" expression="snakeCase(TYPE)" defaultValue="" alwaysStopAt="false" />
+    <variable name="VALUE" expression="clipboard()" defaultValue="" alwaysStopAt="false" />
     <context>
       <option name="SCALA_CODE" value="true" />
     </context>
   </template>
-  <template name="abnn" value="&quot;$KEY$&quot; -&gt; D.$TYPE$(&quot;$VALUE$&quot;),&#10;" description="Output kv:D.BusinessName with custom name" toReformat="true" toShortenFQNames="true">
+  <template name="abnn" value="&quot;$KEY$&quot; -&gt; D.$TYPE$.validateString(&quot;$VALUE$&quot;),&#10;" description="Output kv:D.BusinessName with custom name" toReformat="true" toShortenFQNames="true">
     <variable name="TYPE" expression="" defaultValue="&quot;BusinessName&quot;" alwaysStopAt="false" />
     <variable name="KEY" expression="snakeCase(clipboard)" defaultValue="" alwaysStopAt="false" />
     <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
@@ -160,34 +164,32 @@
       <option name="SCALA_CODE" value="true" />
     </context>
   </template>
-  <template name="abf" value="&quot;$KEY$&quot; -&gt; D.$TYPE$($VALUE$),&#10;" description="Output kv:D.Boolean(false)" toReformat="true" toShortenFQNames="true">
+  <template name="abf" value="&quot;$KEY$&quot; -&gt; D.$TYPE$.False,&#10;" description="Output kv:D.Boolean(false)" toReformat="true" toShortenFQNames="true">
     <variable name="TYPE" expression="" defaultValue="&quot;Boolean&quot;" alwaysStopAt="false" />
-    <variable name="KEY" expression="snakeCase(clipboard)" defaultValue="" alwaysStopAt="true" />
-    <variable name="VALUE" expression="" defaultValue="&quot;false&quot;" alwaysStopAt="false" />
+    <variable name="KEY" expression="concat(&quot;is_&quot;, snakeCase(clipboard))" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="SCALA_CODE" value="true" />
     </context>
   </template>
-  <template name="abt" value="&quot;$KEY$&quot; -&gt; D.$TYPE$($VALUE$),&#10;" description="Output kv:D.Boolean(true)" toReformat="true" toShortenFQNames="true">
+  <template name="abt" value="&quot;$KEY$&quot; -&gt; D.$TYPE$.True,&#10;" description="Output kv:D.Boolean(true)" toReformat="true" toShortenFQNames="true">
     <variable name="TYPE" expression="" defaultValue="&quot;Boolean&quot;" alwaysStopAt="false" />
-    <variable name="KEY" expression="snakeCase(clipboard)" defaultValue="" alwaysStopAt="true" />
-    <variable name="VALUE" expression="" defaultValue="&quot;true&quot;" alwaysStopAt="false" />
+    <variable name="KEY" expression="concat(&quot;is_&quot;, snakeCase(clipboard))" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="SCALA_CODE" value="true" />
     </context>
   </template>
-  <template name="afln" value="&quot;$KEY$&quot; -&gt; D.$TYPE$(&quot;$VALUE$&quot;),&#10;" description="Output kv:D.FullName" toReformat="true" toShortenFQNames="true">
+  <template name="afln" value="&quot;$KEY$&quot; -&gt; D.$TYPE$.validateString(&quot;$VALUE$&quot;),&#10;" description="Output kv:D.FullName" toReformat="true" toShortenFQNames="true">
     <variable name="TYPE" expression="" defaultValue="&quot;FullName&quot;" alwaysStopAt="false" />
-    <variable name="KEY" expression="snakeCase(TYPE)" defaultValue="" alwaysStopAt="true" />
+    <variable name="KEY" expression="snakeCase(TYPE)" defaultValue="" alwaysStopAt="false" />
     <variable name="VALUE" expression="clipboard" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="SCALA_CODE" value="true" />
     </context>
   </template>
-  <template name="ast" value="&quot;$KEY$&quot; -&gt; D.$TYPE$(&quot;$VALUE$&quot;),&#10;" description="Output kv:D.Street" toReformat="true" toShortenFQNames="true">
+  <template name="astr" value="&quot;$KEY$&quot; -&gt; D.$TYPE$.validateString(&quot;$VALUE$&quot;),&#10;" description="Output kv:D.Street" toReformat="true" toShortenFQNames="true">
     <variable name="TYPE" expression="" defaultValue="&quot;Street&quot;" alwaysStopAt="false" />
     <variable name="KEY" expression="snakeCase(TYPE)" defaultValue="" alwaysStopAt="true" />
-    <variable name="VALUE" expression="clipboard" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="clipboard" defaultValue="" alwaysStopAt="false" />
     <context>
       <option name="SCALA_CODE" value="true" />
     </context>
@@ -202,10 +204,10 @@
     </context>
   </template>
   <template name="apcus" value="&quot;$KEY$&quot; -&gt; D.$TYPE$($COUNTRY$, &quot;$VALUE$&quot;),&#10;" description="Output kv:D.PostCode us" toReformat="true" toShortenFQNames="true">
-    <variable name="TYPE" expression="" defaultValue="&quot;PostCode&quot;" alwaysStopAt="false" />
+    <variable name="TYPE" expression="" defaultValue="&quot;D.PostCode&quot;" alwaysStopAt="false" />
     <variable name="KEY" expression="snakeCase(TYPE)" defaultValue="" alwaysStopAt="true" />
     <variable name="COUNTRY" expression="" defaultValue="&quot;Country.us&quot;" alwaysStopAt="false" />
-    <variable name="VALUE" expression="clipboard" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="clipboard" defaultValue="" alwaysStopAt="false" />
     <context>
       <option name="SCALA_CODE" value="true" />
     </context>
@@ -213,8 +215,8 @@
   <template name="astaus" value="&quot;$KEY$&quot; -&gt; D.$TYPE$(&quot;$VALUE$&quot;, $COUNTRY$)," description="Output kv:D.State us" toReformat="true" toShortenFQNames="true">
     <variable name="TYPE" expression="" defaultValue="&quot;State&quot;" alwaysStopAt="false" />
     <variable name="KEY" expression="snakeCase(TYPE)" defaultValue="" alwaysStopAt="true" />
-    <variable name="VALUE" expression="clipboard" defaultValue="" alwaysStopAt="true" />
-    <variable name="COUNTRY" expression="" defaultValue="&quot;Country.us&quot;" alwaysStopAt="false" />
+    <variable name="VALUE" expression="clipboard" defaultValue="" alwaysStopAt="false" />
+    <variable name="COUNTRY" expression="" defaultValue="&quot;D.Country.us&quot;" alwaysStopAt="false" />
     <context>
       <option name="SCALA_CODE" value="true" />
     </context>
@@ -235,10 +237,9 @@
       <option name="SCALA_CODE" value="true" />
     </context>
   </template>
-  <template name="acous" value="&quot;$KEY$&quot; -&gt; D.$TYPE$(&quot;$VALUE$&quot;),&#10;" description="Output kv:D.Country US" toReformat="true" toShortenFQNames="true">
+  <template name="acous" value="&quot;$KEY$&quot; -&gt; D.$TYPE$.us,&#10;" description="Output kv:D.Country US" toReformat="true" toShortenFQNames="true">
     <variable name="TYPE" expression="" defaultValue="&quot;Country&quot;" alwaysStopAt="false" />
     <variable name="KEY" expression="snakeCase(TYPE)" defaultValue="" alwaysStopAt="true" />
-    <variable name="VALUE" expression="" defaultValue="&quot;US&quot;" alwaysStopAt="false" />
     <context>
       <option name="SCALA_CODE" value="true" />
     </context>
@@ -259,7 +260,8 @@
       <option name="SCALA_CODE" value="true" />
     </context>
   </template>
-  <template name="al1d" value="output(&quot;$KEY$&quot;).expectList(0)(&quot;$DICTIONARY$&quot;).expectDictionary.assertContainsPresent(&#10;    $END$&#10;)&#10;&#10;" description="Assert output D.List first element D.Dictionary contains fields" toReformat="true" toShortenFQNames="true">
+  <template name="al1d" value="$OUTPUT$(&quot;$KEY$&quot;).expectList(0)(&quot;$DICTIONARY$&quot;).expectDictionary.assertContainsPresent(&#10;    $END$&#10;)&#10;&#10;" description="Assert output D.List first element D.Dictionary contains fields" toReformat="true" toShortenFQNames="true">
+    <variable name="OUTPUT" expression="" defaultValue="&quot;output&quot;" alwaysStopAt="true" />
     <variable name="KEY" expression="snakeCase(clipboard())" defaultValue="" alwaysStopAt="false" />
     <variable name="DICTIONARY" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
@@ -277,6 +279,28 @@
   <template name="al1l" value="output(&quot;$KEY$&quot;).expectList(0)(&quot;$LIST$&quot;).expectList(0).assertContainsPresent(&#10;    $END$&#10;)&#10;&#10;" description="Assert output D.List first element D.List contains fields" toReformat="true" toShortenFQNames="true">
     <variable name="KEY" expression="snakeCase(clipboard())" defaultValue="" alwaysStopAt="false" />
     <variable name="LIST" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="SCALA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="aflnn" value="&quot;$KEY$&quot; -&gt; D.$TYPE$.validateString(&quot;$VALUE$&quot;),&#10;" description="Output kv:D.FullName with custom name" toReformat="true" toShortenFQNames="true">
+    <variable name="TYPE" expression="" defaultValue="&quot;FullName&quot;" alwaysStopAt="false" />
+    <variable name="KEY" expression="snakeCase(clipboard)" defaultValue="" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="SCALA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="aym" value="&quot;$KEY$&quot; -&gt; D.$TYPE$($END$),&#10;" description="Output kv:D.YearMonth" toReformat="true" toShortenFQNames="true">
+    <variable name="TYPE" expression="" defaultValue="&quot;YearMonth&quot;" alwaysStopAt="false" />
+    <variable name="KEY" expression="snakeCase(clipboard())" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="SCALA_CODE" value="true" />
+    </context>
+  </template>
+  <template name="asn" value="&quot;$KEY$&quot; -&gt; D.String(&quot;$VALUE$&quot;),&#10;" description="Assert kv:D.String with custom name" toReformat="true" toShortenFQNames="true">
+    <variable name="KEY" expression="snakeCase(clipboard())" defaultValue="key" alwaysStopAt="true" />
+    <variable name="VALUE" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="SCALA_CODE" value="true" />
     </context>
